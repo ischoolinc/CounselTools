@@ -35,6 +35,7 @@
             this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btnExit = new DevComponents.DotNetBar.ButtonX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.advTree1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,11 +46,11 @@
             this.btnLoadFile.AutoSize = true;
             this.btnLoadFile.BackColor = System.Drawing.Color.Transparent;
             this.btnLoadFile.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnLoadFile.Location = new System.Drawing.Point(641, 507);
+            this.btnLoadFile.Location = new System.Drawing.Point(930, 538);
             this.btnLoadFile.Name = "btnLoadFile";
             this.btnLoadFile.Size = new System.Drawing.Size(78, 25);
             this.btnLoadFile.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnLoadFile.TabIndex = 0;
+            this.btnLoadFile.TabIndex = 2;
             this.btnLoadFile.Text = "讀取比對檔";
             this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
             // 
@@ -66,6 +67,8 @@
             // 
             this.advTree1.BackgroundStyle.Class = "TreeBorderKey";
             this.advTree1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.advTree1.DragDropEnabled = false;
+            this.advTree1.DragDropNodeCopyEnabled = false;
             this.advTree1.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
             this.advTree1.Location = new System.Drawing.Point(12, 39);
             this.advTree1.Name = "advTree1";
@@ -74,9 +77,10 @@
             this.advTree1.NodesConnector = this.nodeConnector1;
             this.advTree1.NodeStyle = this.elementStyle1;
             this.advTree1.PathSeparator = ";";
-            this.advTree1.Size = new System.Drawing.Size(802, 424);
+            this.advTree1.Size = new System.Drawing.Size(1091, 468);
             this.advTree1.Styles.Add(this.elementStyle1);
-            this.advTree1.TabIndex = 1;
+            this.advTree1.TabIndex = 0;
+            this.advTree1.Click += new System.EventHandler(this.advTree1_Click);
             // 
             // node1
             // 
@@ -105,9 +109,9 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Location = new System.Drawing.Point(13, 13);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(75, 23);
+            this.labelX1.Size = new System.Drawing.Size(183, 23);
             this.labelX1.TabIndex = 2;
-            this.labelX1.Text = "資料內容";
+            this.labelX1.Text = "資料比對結果";
             // 
             // btnExit
             // 
@@ -115,7 +119,7 @@
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnExit.Location = new System.Drawing.Point(739, 507);
+            this.btnExit.Location = new System.Drawing.Point(1028, 538);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -123,11 +127,26 @@
             this.btnExit.Text = "離開";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.Class = "";
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(13, 523);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(837, 23);
+            this.labelX2.TabIndex = 4;
+            this.labelX2.Text = "來源檔有比對檔沒有字呈現紅色,，比對檔案內有來源檔沒有字綠色，字黑色表示相同。。";
+            // 
             // frmQuestionCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 542);
+            this.ClientSize = new System.Drawing.Size(1115, 579);
+            this.Controls.Add(this.labelX2);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.advTree1);
@@ -151,6 +170,7 @@
         private DevComponents.DotNetBar.ElementStyle elementStyle1;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.ButtonX btnExit;
+        private DevComponents.DotNetBar.LabelX labelX2;
     }
 }
 

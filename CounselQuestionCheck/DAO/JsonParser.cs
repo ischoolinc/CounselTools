@@ -85,7 +85,7 @@ namespace CounselQuestionCheck.DAO
                                                 qt.QuestionOptionsList = new List<QuestionOptions>();
                                                 if (qText["QuestionCode"] != null)
                                                 {
-                                                    qt.Text = qText["QuestionCode"];
+                                                    qt.QuestionCode = qText["QuestionCode"];
                                                 }
 
                                                 if (qText["Options"] != null)
