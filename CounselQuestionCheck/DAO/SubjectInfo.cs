@@ -9,6 +9,8 @@ namespace CounselQuestionCheck.DAO
     public class SubjectInfo
     {
         public string Subject { get; set; }
+      
+        public bool isSubjectPass = false;
         public List<QuestionGroup> QuestionGroupList;
     }
 }

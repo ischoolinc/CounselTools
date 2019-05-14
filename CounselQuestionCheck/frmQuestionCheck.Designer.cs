@@ -129,13 +129,14 @@
             // 
             // labelX2
             // 
+            this.labelX2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelX2.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(13, 523);
+            this.labelX2.Location = new System.Drawing.Point(12, 538);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(837, 23);
             this.labelX2.TabIndex = 4;

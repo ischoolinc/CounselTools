@@ -9,6 +9,9 @@ namespace CounselQuestionCheck.DAO
     public class QuestionQuery
     {
         public string Query { get; set; }
+
+        public bool isQueryPass = false;
+
         public List<QuestionText> QuestionTextList;
     }
 }

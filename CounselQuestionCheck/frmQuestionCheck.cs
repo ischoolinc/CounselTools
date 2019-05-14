@@ -37,92 +37,90 @@ namespace CounselQuestionCheck
                 foreach (SubjectInfo subjInfo in subjectInfoList)
                 {
                     Node n1 = new Node();
-
-                    //for( int i = 1; i<= 10; i++)
-                    //{
-                    //    Cell c1 = new Cell();
-                    //    c1.Text = "abc";
-                    //    n1.Cells.Add(c1);
-                    //}
-
+                    n1.Text = subjInfo.Subject;
+                    n1.Tag = subjInfo;
 
                     foreach (QuestionGroup qg in subjInfo.QuestionGroupList)
                     {
                         Node n2 = new Node();
                         n2.Text = qg.Group;
+                        n2.Tag = qg;
+
                         foreach (QuestionQuery qq in qg.QuestionQueryList)
                         {
                             Node n3 = new Node();
                             n3.Text = qq.Query;
-
+                            n3.Tag = qq;
                             foreach (QuestionText qt in qq.QuestionTextList)
                             {
                                 Node n4 = new Node();
                                 n4.Text = "QuestionText";
-                                n4.Tag = qt.QuestionCode;
+                                n4.Tag = qt;
                                 // 5 個 cells
 
-                                Cell c41 = new Cell();
-                                c41.Text = "QuestionCode:" + qt.QuestionCode;
-                                c41.Tag = qt.QuestionCode;
-                                n4.Cells.Add(c41);
-                                Cell c42 = new Cell();
-                                c42.Text = "Type:" + qt.Type;
-                                c42.Tag = qt.Type;
-                                n4.Cells.Add(c42);
-                                Cell c43 = new Cell();
-                                c43.Text = "Require:" + qt.Require;
-                                c43.Tag = qt.Require;
-                                n4.Cells.Add(c43);
-                                Cell c44 = new Cell();
-                                c44.Text = "RequireLink:" + qt.RequireLink;
-                                c44.Tag = qt.RequireLink;
-                                n4.Cells.Add(c44);
-                                Cell c45 = new Cell();
-                                c45.Text = "Text:" + qt.Text;
-                                c45.Tag = qt.Text;
-                                n4.Cells.Add(c45);
+                                Node cn41 = new Node();
+                                cn41.Text = "QuestionCode:" + qt.QuestionCode;
+                                cn41.Tag = "QuestionCode";
+
+                                n4.Nodes.Add(cn41);
+                                Node cn42 = new Node();
+                                cn42.Text = "Type:" + qt.Type;
+                                cn42.Tag = "Type";
+                                n4.Nodes.Add(cn42);
+                                Node cn43 = new Node();
+                                cn43.Text = "Require:" + qt.Require;
+                                cn43.Tag = "Require";
+
+                                n4.Nodes.Add(cn43);
+                                Node cn44 = new Node();
+                                cn44.Text = "RequireLink:" + qt.RequireLink;
+                                cn44.Tag = "RequireLink";
+                                n4.Nodes.Add(cn44);
+                                Node cn45 = new Node();
+                                cn45.Text = "Text:" + qt.Text;
+                                cn45.Tag = "Text";
+                                n4.Nodes.Add(cn45);
 
                                 foreach (QuestionOptions qo in qt.QuestionOptionsList)
                                 {
                                     Node n5 = new Node();
                                     n5.Text = "QuestionOptions";
-                                    n5.Tag = qo.OptionCode;
+                                    n5.Tag = qo;
 
-                                    Cell c51 = new Cell();
-                                    c51.Text = "AnswerID:" + qo.AnswerID;
-                                    c51.Tag = qo.AnswerID;
-                                    n5.Cells.Add(c51);
+                                    Node cn51 = new Node();
+                                    cn51.Text = "AnswerID:" + qo.AnswerID;
+                                    cn51.Tag = "AnswerID";
+                                    n5.Nodes.Add(cn51);
 
-                                    Cell c52 = new Cell();
-                                    c52.Text = "OptionCode:" + qo.OptionCode;
-                                    c52.Tag = qo.OptionCode;
-                                    n5.Cells.Add(c52);
+                                    Node cn52 = new Node();
+                                    cn52.Text = "OptionCode:" + qo.OptionCode;
+                                    cn52.Tag = "OptionCode";
+                                    n5.Nodes.Add(cn52);
 
-                                    Cell c53 = new Cell();
-                                    c53.Text = "OptionText:" + qo.OptionText;
-                                    c53.Tag = qo.OptionText;
-                                    n5.Cells.Add(c53);
+                                    Node cn53 = new Node();
+                                    cn53.Text = "OptionText:" + qo.OptionText;
+                                    cn53.Tag = "OptionText";
+                                    n5.Nodes.Add(cn53);
 
-                                    Cell c54 = new Cell();
-                                    c54.Text = "AnswerValue:" + qo.AnswerValue;
-                                    c54.Tag = qo.AnswerValue;
-                                    n5.Cells.Add(c54);
+                                    Node cn54 = new Node();
+                                    cn54.Text = "AnswerValue:" + qo.AnswerValue;
+                                    cn54.Tag = "AnswerValue";
+                                    n5.Nodes.Add(cn54);
 
-                                    Cell c55 = new Cell();
-                                    c55.Text = "AnswerMatrix:" + qo.AnswerMatrix;
-                                    c55.Tag = qo.AnswerMatrix;
-                                    n5.Cells.Add(c55);
+                                    Node cn55 = new Node();
+                                    cn55.Text = "AnswerMatrix:" + qo.AnswerMatrix;
+                                    cn55.Tag = "AnswerMatrix";
+                                    n5.Nodes.Add(cn55);
 
-                                    Cell c56 = new Cell();
-                                    c56.Text = "AnswerChecked:" + qo.AnswerChecked;
-                                    c56.Tag = qo.AnswerChecked;
-                                    n5.Cells.Add(c56);
+                                    Node cn56 = new Node();
+                                    cn56.Text = "AnswerChecked:" + qo.AnswerChecked;
+                                    cn56.Tag = "AnswerChecked";
+                                    n5.Nodes.Add(cn56);
 
-                                    Cell c57 = new Cell();
-                                    c57.Text = "AnswerComplete:" + qo.AnswerComplete;
-                                    c57.Tag = qo.AnswerComplete;
-                                    n5.Cells.Add(c57);
+                                    Node cn57 = new Node();
+                                    cn57.Text = "AnswerComplete:" + qo.AnswerComplete;
+                                    cn57.Tag = "AnswerComplete";
+                                    n5.Nodes.Add(cn57);
 
                                     n4.Nodes.Add(n5);
                                 }
@@ -130,62 +128,178 @@ namespace CounselQuestionCheck
                             }
 
                             n2.Nodes.Add(n3);
+
                         }
 
                         n1.Nodes.Add(n2);
                     }
-
-                    n1.Style = new DevComponents.DotNetBar.ElementStyle();
-                    //n1.Style.TextColor = Color.Blue;
-                    //n1.Style.BackColor = Color.Red;
-                    n1.Text = subjInfo.Subject;
-                    n1.Tag = subjInfo;
-
                     advTree1.Nodes.Add(n1);
+
                 }
             }
+
+            // 處理錯誤顏色標示
+            foreach (Node n1 in advTree1.Nodes)
+            {
+                SubjectInfo sn1 = n1.Tag as SubjectInfo;
+                if (sn1 != null)
+                {
+                    if (sn1.isSubjectPass == false)
+                    {
+                        n1.Style = new DevComponents.DotNetBar.ElementStyle();
+                        n1.Style.TextColor = Color.Red;
+                        n1.Expanded = true;
+                    }
+                }
+
+                foreach (Node n2 in n1.Nodes)
+                {
+                    QuestionGroup qg = n2.Tag as QuestionGroup;
+                    if (qg != null)
+                    {
+                        if (qg.isGroupPass == false)
+                        {
+                            n2.Style = new DevComponents.DotNetBar.ElementStyle();
+                            n2.Style.TextColor = Color.Red;
+                            n2.Expanded = true;
+                            n2.Parent.Expanded = true;
+                        }
+                    }
+
+                    foreach (Node n3 in n2.Nodes)
+                    {
+                        QuestionQuery qq = n3.Tag as QuestionQuery;
+                        if (qq != null)
+                        {
+                            if (qq.isQueryPass == false)
+                            {
+                                n3.Style = new DevComponents.DotNetBar.ElementStyle();
+                                n3.Style.TextColor = Color.Red;
+                                n3.Expanded = true;
+                                n3.Parent.Expanded = true;
+                                n3.Parent.Parent.Expanded = true;
+                            }
+
+                            foreach (Node n4 in n3.Nodes)
+                            {
+                                QuestionText qt = n4.Tag as QuestionText;
+                                if (qt != null)
+                                {
+                                    foreach (Node n4s in n4.Nodes)
+                                    {
+                                        string tagType = n4s.Tag.ToString();
+                                        bool tagTypePass = true;
+                                        switch (tagType)
+                                        {
+                                            case "Text":
+                                                tagTypePass = qt.isTextPass;
+                                                break;
+                                            case "Type":
+                                                tagTypePass = qt.isTypePass;
+                                                break;
+                                            case "Require":
+                                                tagTypePass = qt.isRequirePass;
+                                                break;
+                                            case "RequireLink":
+
+                                                tagTypePass = qt.isRequireLinkPass;
+                                                break;
+                                            case "QuestionCode":
+                                                tagTypePass = qt.isQuestionCodePass;
+                                                break;
+                                        }
+
+                                        if (tagTypePass == false)
+                                        {
+                                            n4s.Style = new DevComponents.DotNetBar.ElementStyle();
+                                            n4s.Style.TextColor = Color.Red;
+                                            n4s.Expanded = true;
+                                            n4s.Parent.Expanded = true;
+                                            n4s.Parent.Parent.Expanded = true;
+                                            n4s.Parent.Parent.Parent.Expanded = true;
+                                            n4s.Parent.Parent.Parent.Parent.Expanded = true;
+                                        }
+
+                                        foreach (Node n5 in n4.Nodes)
+                                        {
+
+                                            if (n5.Text == "QuestionOptions")
+                                            {
+                                               
+                                                QuestionOptions qo = n5.Tag as QuestionOptions;
+
+                                                if (qo != null)
+                                                {
+                                                    foreach (Node n5s in n5.Nodes)
+                                                    {
+                                                        string tagTypens5 = n5s.Tag.ToString();
+                                                        bool tagTypePassn5 = true;
+                                                        switch (tagTypens5)
+                                                        {
+
+                                                            case "AnswerID":
+                                                                tagTypePassn5 = qo.isAnswerIDPass;
+                                                                break;
+
+                                                            case "OptionCode":
+                                                                tagTypePassn5 = qo.isOptionCodePass;
+                                                                break;
+
+                                                            case "OptionText":
+                                                                tagTypePassn5 = qo.isOptionTextPass;
+                                                                break;
+
+                                                            case "AnswerValue":
+                                                                tagTypePassn5 = qo.isAnswerValuePass;
+                                                                break;
+
+                                                            case "AnswerMatrix":
+                                                                tagTypePassn5 = qo.isAnswerMatrixPass;
+                                                                break;
+
+                                                            case "AnswerChecked":
+                                                                tagTypePassn5 = qo.isAnswerCheckedPass;
+                                                                break;
+
+                                                            case "AnswerComplete":
+                                                                tagTypePassn5 = qo.isAnswerCompletePass;
+                                                                break;
+
+                                                        }
+                                                        if (tagTypePassn5 == false)
+                                                        {
+                                                            n5s.Style = new DevComponents.DotNetBar.ElementStyle();
+                                                            n5s.Style.TextColor = Color.Red;
+                                                            n5s.Expanded = true;
+                                                            n5s.Parent.Expanded = true;
+                                                            n5s.Parent.Parent.Expanded = true;
+                                                            n5s.Parent.Parent.Parent.Expanded = true;
+                                                            n5s.Parent.Parent.Parent.Parent.Expanded = true;
+                                                            n5s.Parent.Parent.Parent.Parent.Parent.Expanded = true;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+            }
+
         }
 
 
         private void frmQuestionCheck_Load(object sender, EventArgs e)
         {
+
             advTree1.Nodes.Clear();
-            try
-            {
-                string sourcePath = Application.StartupPath + "\\question_template.json";
-
-                JsonParser jp = new JsonParser();
-
-                subjectInfoList = jp.LoadJSonFileAndParse(sourcePath);
-
-                sourceDict.Clear();
-                foreach (SubjectInfo ss in subjectInfoList)
-                {
-                    if (!sourceDict.ContainsKey(ss.Subject))
-                        sourceDict.Add(ss.Subject, new Dictionary<string, Dictionary<string, QuestionText>>());
-
-                    foreach (QuestionGroup qg in ss.QuestionGroupList)
-                    {
-                        if (!sourceDict[ss.Subject].ContainsKey(qg.Group))
-                        {
-                            sourceDict[ss.Subject].Add(qg.Group, new Dictionary<string, QuestionText>());
-                        }
-
-                        foreach (QuestionQuery qq in qg.QuestionQueryList)
-                        {
-                            if (!sourceDict[ss.Subject][qg.Group].ContainsKey(qq.Query))
-                                sourceDict[ss.Subject][qg.Group].Add(qq.Query, new QuestionText());
-                        }
-                    }
-                }
-
-                // Console.WriteLine(subjectInfoList.Count);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("來源樣板 question_template.json 解析 JSON 發生失敗," + ex.Message);
-            }
-
 
         }
 
@@ -200,10 +314,49 @@ namespace CounselQuestionCheck
             ofd.Filter = "JSON Files (.json)|*.json|All Files (*.*)|*.*";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                LoadSourceData();
 
-                JsonParser jp = new JsonParser();
-                List<SubjectInfo> TargetSubjectList = jp.LoadJSonFileAndParse(ofd.FileName);
+                try
+                {
+                    advTree1.Nodes.Clear();
+
+                    // 取得來源資料
+                    string sourcePath = Application.StartupPath + "\\question_template.json";
+
+                    JsonParser jp = new JsonParser();
+
+                    subjectInfoList = jp.LoadJSonFileAndParse(sourcePath);
+
+                    sourceDict.Clear();
+                    foreach (SubjectInfo ss in subjectInfoList)
+                    {
+                        if (!sourceDict.ContainsKey(ss.Subject))
+                            sourceDict.Add(ss.Subject, new Dictionary<string, Dictionary<string, QuestionText>>());
+
+                        foreach (QuestionGroup qg in ss.QuestionGroupList)
+                        {
+                            if (!sourceDict[ss.Subject].ContainsKey(qg.Group))
+                            {
+                                sourceDict[ss.Subject].Add(qg.Group, new Dictionary<string, QuestionText>());
+                            }
+
+                            foreach (QuestionQuery qq in qg.QuestionQueryList)
+                            {
+                                if (!sourceDict[ss.Subject][qg.Group].ContainsKey(qq.Query))
+                                    sourceDict[ss.Subject][qg.Group].Add(qq.Query, new QuestionText());
+                            }
+                        }
+                    }
+
+                    // Console.WriteLine(subjectInfoList.Count);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("來源樣板 question_template.json 解析 JSON 發生失敗," + ex.Message);
+                }
+
+
+                JsonParser jpT = new JsonParser();
+                List<SubjectInfo> TargetSubjectList = jpT.LoadJSonFileAndParse(ofd.FileName);
                 //Console.Write(TargetSubjectList.Count);
                 CheckData(TargetSubjectList);
                 //    MessageBox.Show("完成");
@@ -236,95 +389,116 @@ namespace CounselQuestionCheck
                 }
             }
 
-            //  檢查原始檔 Subject,Group,Query 在比對檔案是否存在，不存在用紅色表示
-            foreach (Node item1 in advTree1.Nodes)
+            // 以來源為基礎比對
+            foreach (SubjectInfo subject in subjectInfoList)
             {
-                // subject
-                if (targetDict.ContainsKey(item1.Text))
+                if (targetDict.ContainsKey(subject.Subject))
                 {
-                    foreach (Node item2 in item1.Nodes)
+                    subject.isSubjectPass = true;
+                    foreach (QuestionGroup qg in subject.QuestionGroupList)
                     {
-                        if (targetDict[item1.Text].ContainsKey(item2.Text))
+                        if (targetDict[subject.Subject].ContainsKey(qg.Group))
                         {
-                            foreach (Node item3 in item2.Nodes)
-                            {
-                                if (targetDict[item1.Text][item2.Text].ContainsKey(item3.Text))
-                                {
-                                    List<QuestionText> qtList = targetDict[item1.Text][item2.Text][item3.Text];
-                                    // 比對 QuestionText:QuestionCode
-                                    foreach (Node item4 in item3.Nodes)
-                                    {
-                                        bool item4Pass = false;
-                                        string qtQuestionCode = item4.Tag.ToString();
-                                        foreach (QuestionText qt in qtList)
-                                        {
-                                            if (qt.QuestionCode == qtQuestionCode)
-                                            {
-                                                item4Pass = true;
-                                                foreach (Node item5 in item4.Nodes)
-                                                {
-                                                    bool item5Pass = false;
-                                                    string QuestionOptionCode = item5.Tag.ToString();
-                                                    // 再比對 Options
-                                                    foreach (QuestionOptions qo in qt.QuestionOptionsList)
-                                                    {
-                                                        if (qo.OptionCode == QuestionOptionCode)
-                                                        {
-                                                            item5Pass = true;
+                            qg.isGroupPass = true;
 
+                            foreach (QuestionQuery qq in qg.QuestionQueryList)
+                            {
+                                if (targetDict[subject.Subject][qg.Group].ContainsKey(qq.Query))
+                                {
+                                    qq.isQueryPass = true;
+
+                                    List<QuestionText> targetQTList = targetDict[subject.Subject][qg.Group][qq.Query];
+
+                                    // 以 QuestionText Text 當作 key 比對
+                                    foreach (QuestionText qt in qq.QuestionTextList)
+                                    {
+                                        // 比對 QuestionText 上項目
+                                        foreach (QuestionText tqt in targetQTList)
+                                        {
+                                            if (qt.Text == tqt.Text)
+                                            {
+                                                qt.isTextPass = true;
+
+                                                if (qt.Require == tqt.Require)
+                                                {
+                                                    qt.isRequirePass = true;
+                                                }
+                                                if (qt.RequireLink == tqt.RequireLink)
+                                                {
+                                                    qt.isRequireLinkPass = true;
+                                                }
+
+                                                if (qt.Type == tqt.Type)
+                                                {
+                                                    qt.isTypePass = true;
+                                                }
+
+                                                if (qt.QuestionCode == tqt.QuestionCode)
+                                                {
+                                                    qt.isQuestionCodePass = true;
+                                                }
+
+                                                // 比對 Options
+                                                foreach (QuestionOptions qo in qt.QuestionOptionsList)
+                                                {
+                                                    foreach (QuestionOptions tqo in tqt.QuestionOptionsList)
+                                                    {
+                                                        if (qo.OptionText == tqo.OptionText)
+                                                        {
+                                                            qo.isOptionTextPass = true;
+
+                                                            if (qo.AnswerID == tqo.AnswerID)
+                                                                qo.isAnswerIDPass = true;
+
+                                                            if (qo.OptionCode == tqo.OptionCode)
+                                                                qo.isOptionCodePass = true;
+
+                                                            if (qo.OptionText == tqo.OptionText)
+                                                                qo.isOptionTextPass = true;
+
+                                                            if (qo.AnswerValue == tqo.AnswerValue)
+                                                                qo.isAnswerValuePass = true;
+
+                                                            if (qo.AnswerMatrix == tqo.AnswerMatrix)
+                                                                qo.isAnswerMatrixPass = true;
+
+                                                            if (qo.AnswerChecked == tqo.AnswerChecked)
+                                                                qo.isAnswerCheckedPass = true;
+
+                                                            if (qo.AnswerComplete == tqo.AnswerComplete)
+                                                                qo.isAnswerCompletePass = true;
                                                         }
                                                     }
-                                                    if (item5Pass == false)
-                                                    {
-                                                        item5.Style = new DevComponents.DotNetBar.ElementStyle();
-                                                        item5.Style.TextColor = Color.Red;
-                                                        item5.Parent.Expand();
-                                                        item5.Parent.Parent.Expand();
-                                                        item5.Parent.Parent.Parent.Expand();
-                                                        item5.Parent.Parent.Parent.Parent.Expand();
-                                                    }
-
                                                 }
                                             }
-                                        }
-
-                                        if (item4Pass == false)
-                                        {
-                                            item4.Style = new DevComponents.DotNetBar.ElementStyle();
-                                            item4.Style.TextColor = Color.Red;
-                                            item4.Parent.Expand();
-                                            item4.Parent.Parent.Expand();
-                                            item4.Parent.Parent.Parent.Expand();
                                         }
                                     }
                                 }
                                 else
                                 {
-                                    item3.Style = new DevComponents.DotNetBar.ElementStyle();
-                                    item3.Style.TextColor = Color.Red;
-                                    item3.Expand();
-                                    item3.Parent.Expand();
-                                    item3.Parent.Parent.Expand();
+                                    qq.isQueryPass = false;
                                 }
                             }
-
                         }
                         else
                         {
-                            item2.Style = new DevComponents.DotNetBar.ElementStyle();
-                            item2.Style.TextColor = Color.Red;
-                            item2.Expand();
-                            item2.Parent.Expand();
+                            qg.isGroupPass = false;
                         }
                     }
                 }
                 else
                 {
-                    item1.Style = new DevComponents.DotNetBar.ElementStyle();
-                    item1.Style.TextColor = Color.Red;
-                    item1.Expand();
+                    subject.isSubjectPass = false;
                 }
             }
+
+
+
+
+            // 比對後放入 Tree
+            LoadSourceData();
+
+
 
             Node errNodes = new Node();
             errNodes.Text = "比對檔案內有，來源檔案沒有";

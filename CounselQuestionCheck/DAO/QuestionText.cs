@@ -14,6 +14,12 @@ namespace CounselQuestionCheck.DAO
         public string RequireLink { get; set; }
         public string Text { get; set; }
 
+        public bool isQuestionCodePass = false;
+        public bool isTypePass = false;
+        public bool isRequirePass = false;
+        public bool isRequireLinkPass = false;
+        public bool isTextPass = false;
+
         public List<QuestionOptions> QuestionOptionsList;
     }
 }

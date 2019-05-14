@@ -15,5 +15,14 @@ namespace CounselQuestionCheck.DAO
         public string AnswerMatrix { get; set; }
         public bool AnswerChecked { get; set; }
         public bool AnswerComplete { get; set; }
+
+
+        public bool isAnswerIDPass = false;
+        public bool isOptionCodePass = false;
+        public bool isOptionTextPass = false;
+        public bool isAnswerValuePass = false;
+        public bool isAnswerMatrixPass = false;
+        public bool isAnswerCheckedPass = false;
+        public bool isAnswerCompletePass = false;
     }
 }
