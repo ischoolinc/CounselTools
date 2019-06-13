@@ -9,8 +9,7 @@ namespace CounselQuestionCheck.DAO
     public class QuestionGroup
     {
         public string Group { get; set; }
-      
-        public bool isGroupPass = false;
+        
         public List<QuestionQuery> QuestionQueryList;
     }
 }

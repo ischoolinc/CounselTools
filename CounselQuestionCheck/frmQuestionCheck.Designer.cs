@@ -140,7 +140,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(837, 23);
             this.labelX2.TabIndex = 4;
-            this.labelX2.Text = "來源檔有比對檔沒有字呈現紅色,，比對檔案內有來源檔沒有字綠色，字黑色表示相同。。";
+            this.labelX2.Text = "總表有比對檔沒有字呈現紅色，總表沒有比對檔內有字灰色，字黑色表示相同。";
             // 
             // frmQuestionCheck
             // 
@@ -153,6 +153,8 @@
             this.Controls.Add(this.advTree1);
             this.Controls.Add(this.btnLoadFile);
             this.DoubleBuffered = true;
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
             this.Name = "frmQuestionCheck";
             this.Text = "輔導綜合紀錄表題目比對";
             this.Load += new System.EventHandler(this.frmQuestionCheck_Load);

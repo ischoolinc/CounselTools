@@ -83,6 +83,14 @@ namespace CounselQuestionCheck.DAO
                                             {
                                                 QuestionText qt = new QuestionText();
                                                 qt.QuestionOptionsList = new List<QuestionOptions>();
+
+                                                // 初始值 ""
+                                                qt.QuestionCode = "";
+                                                qt.Type = "";
+                                                qt.Require = "";
+                                                qt.RequireLink = "";
+                                                qt.Text = "";
+
                                                 if (qText["QuestionCode"] != null)
                                                 {
                                                     qt.QuestionCode = qText["QuestionCode"];
@@ -93,8 +101,17 @@ namespace CounselQuestionCheck.DAO
                                                     foreach (var qOption in qText["Options"])
                                                     {
                                                         QuestionOptions qo = new QuestionOptions();
+
+                                                        qo.AnswerID = "";
+                                                        qo.OptionCode = "";
+                                                        qo.OptionText = "";
+                                                        qo.AnswerValue = "";
+                                                        qo.AnswerMatrix = "";
+                                                        qo.AnswerChecked = "";
+                                                        qo.AnswerComplete = "";
+
                                                         if (qOption["AnswerID"] != null) {
-                                                            qo.AnswerID = qOption["AnswerID"];
+                                                            qo.AnswerID = qOption["AnswerID"]+"";
                                                         }
                                                         if (qOption["OptionCode"] != null) {
                                                             qo.OptionCode = qOption["OptionCode"];
@@ -106,24 +123,26 @@ namespace CounselQuestionCheck.DAO
                                                             qo.AnswerValue = qOption["AnswerValue"];
                                                         }
                                                         if (qOption["AnswerMatrix"] != null) {
-                                                           // qo.AnswerMatrix = qOption["AnswerMatrix"];
+                                                            qo.AnswerMatrix = qOption["AnswerMatrix"]+"";
                                                         }
                                                         if (qOption["AnswerChecked"] != null) {
-                                                            qo.AnswerChecked = qOption["AnswerChecked"];
+                                                            qo.AnswerChecked = qOption["AnswerChecked"]+"";
                                                         }
                                                         if (qOption["AnswerComplete"] != null) {
-                                                            qo.AnswerComplete = qOption["AnswerComplete"];
+                                                            qo.AnswerComplete = qOption["AnswerComplete"]+"";
                                                         }
                                                         qt.QuestionOptionsList.Add(qo);
                                                     }
                                                 }
+
                                                 if (qText["Type"] != null)
                                                 {
                                                     qt.Type = qText["Type"];
-                                                }
+                                                }                                              
+
                                                 if (qText["Require"] != null)
                                                 {
-                                                    qt.Require = qText["Require"];
+                                                    qt.Require = qText["Require"]+"";
                                                 }
                                                 if (qText["RequireLink"] != null)
                                                 {
